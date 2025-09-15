@@ -9,6 +9,7 @@ export const Construction = () => {
             <p className="text-lg text-gray-600">
                 Please wait while we finish building it.
             </p>
+            <p>bejirrr</p>
         </div>
     )
 }
