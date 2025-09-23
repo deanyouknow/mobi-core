@@ -69,13 +69,15 @@ const Home = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="mb-12">
-            <motion.button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Mulai Proyek Anda
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Mulai Proyek Anda
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 
