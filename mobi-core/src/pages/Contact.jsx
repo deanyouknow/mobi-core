@@ -115,7 +115,7 @@ const Contact = () => {
                     variants={inputVariants}
                     type="tel"
                     className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:outline-none focus:border-blue-400 transition-colors duration-300"
-                    placeholder="+62 812-3456-7890"
+                    placeholder="+62 123-456-7890"
                   />
                 </motion.div>
 
