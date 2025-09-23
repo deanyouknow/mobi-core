@@ -42,7 +42,7 @@ const SplashScreen = ({ onComplete }) => {
             transition: { duration: 0.4, ease: "easeInOut" }
           }}
         >
-          {/* Logo dengan Background Gradient - Improved Visibility */}
+          {/* Logo dengan Background Gradient */}
           <motion.div
             className="mb-16 relative"
             initial={{ scale: 0.5, opacity: 0 }}
@@ -55,34 +55,45 @@ const SplashScreen = ({ onComplete }) => {
               }
             }}
           >
-            {/* Outer Background Gradient Circle - Reduced opacity */}
+            {/* Background Gradient Circle */}
             <motion.div
-              className="absolute inset-0 -m-10 rounded-full"
-              style={{
-                background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 50%, transparent 100%)',
-                filter: 'blur(3px)'
-              }}
-              animate={{
-                scale: [1, 1.05, 1],
-                opacity: [0.6, 0.8, 0.6],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+  className="absolute inset-0 -m-8 rounded-full bg-white/15"
+  style={{
+    background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+    filter: 'blur(2px)'
+  }}
+  animate={{
+    scale: [1, 1.05, 1],
+    opacity: [0.8, 1, 0.8],
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }}
+/>
 
-            {/* Middle Background Circle - Subtle glow */}
+
+<motion.div
+  className="absolute inset-0 -m-4 rounded-full bg-white/20"
+  style={{
+    background: 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 70%, transparent 100%)'
+  }}
+  animate={{
+    scale: [1, 1.02, 1],
+  }}
+  transition={{
+    duration: 2.5,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }}
+/>
+            
+            {/* Inner Gradient untuk kontras lebih baik */}
             <motion.div
-              className="absolute inset-0 -m-6 rounded-full"
-              style={{
-                background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 70%, transparent 100%)',
-                filter: 'blur(1px)'
-              }}
+              className="absolute inset-0 -m-4 rounded-full bg-gradient-radial from-white/30 via-white/15 to-transparent"
               animate={{
-                scale: [1, 1.03, 1],
-                opacity: [0.7, 0.9, 0.7],
+                scale: [1, 1.02, 1],
               }}
               transition={{
                 duration: 2.5,
@@ -90,55 +101,17 @@ const SplashScreen = ({ onComplete }) => {
                 ease: "easeInOut"
               }}
             />
-            
-            {/* Inner subtle glow untuk kontras yang lebih baik */}
-            <motion.div
-              className="absolute inset-0 -m-3 rounded-full"
-              style={{
-                background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 60%, transparent 100%)',
-                filter: 'blur(0.5px)'
-              }}
-              animate={{
-                scale: [1, 1.02, 1],
-                opacity: [0.8, 1, 0.8],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
 
-            {/* Logo dengan enhanced brightness */}
+            {/* Logo */}
             <motion.img
               src={logo}
               alt="MOBICORE"
-              className="w-32 h-32 object-contain relative z-20"
+              className="w-32 h-32 object-contain relative z-10"
               style={{
-                filter: "brightness(1.2) contrast(1.1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.3)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4))",
-                mixBlendMode: "normal"
+                filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))"
               }}
               animate={{
                 scale: [1, 1.01, 1],
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-
-            {/* Additional subtle rim light effect */}
-            <motion.div
-              className="absolute inset-0 rounded-full border border-white/10"
-              style={{
-                width: '128px',
-                height: '128px',
-                margin: 'auto',
-                boxShadow: 'inset 0 0 20px rgba(255,255,255,0.1)'
-              }}
-              animate={{
-                opacity: [0.5, 0.8, 0.5],
               }}
               transition={{
                 duration: 2.5,
