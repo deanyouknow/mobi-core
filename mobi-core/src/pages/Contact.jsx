@@ -34,13 +34,13 @@ const Contact = () => {
     {
       icon: "📧",
       title: "Email",
-      value: "info@mobicore.id",
+      value: "info@mobi-core.tech",
       description: "Hubungi kami untuk konsultasi gratis"
     },
     {
       icon: "📱",
       title: "WhatsApp",
-      value: "+62 812-3456-7890",
+      value: "+62 857-9583-3524",
       description: "Response cepat via WhatsApp"
     },
     {
