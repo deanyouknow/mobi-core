@@ -56,16 +56,17 @@ function App() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 right-0 mt-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-4 sm:p-6 shadow-2xl"
+            className="md:hidden absolute top-full left-0 right-0 mt-4 backdrop-blur-2xl bg-gray-900/95 border border-white/30 rounded-2xl p-4 sm:p-6 shadow-2xl"
           >
             <div className="flex flex-col space-y-2 sm:space-y-3">
-              <Link to="/" className="px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 backdrop-blur-sm text-center" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link to="/about" className="px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 backdrop-blur-sm text-center" onClick={() => setIsMenuOpen(false)}>About</Link>
-              <Link to="/services" className="px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 backdrop-blur-sm text-center" onClick={() => setIsMenuOpen(false)}>Services</Link>
-              <Link to="/our-design" className="px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 backdrop-blur-sm text-center" onClick={() => setIsMenuOpen(false)}>Our Design</Link>
-              <Link to="/contact" className="px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 backdrop-blur-sm text-center" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <Link to="/" className="px-4 py-3 text-white hover:bg-white/30 rounded-lg transition-all duration-300 backdrop-blur-sm text-center font-medium" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link to="/about" className="px-4 py-3 text-white hover:bg-white/30 rounded-lg transition-all duration-300 backdrop-blur-sm text-center font-medium" onClick={() => setIsMenuOpen(false)}>Tentang Kami</Link>
+              <Link to="/services" className="px-4 py-3 text-white hover:bg-white/30 rounded-lg transition-all duration-300 backdrop-blur-sm text-center font-medium" onClick={() => setIsMenuOpen(false)}>Layanan</Link>
+              <Link to="/our-design" className="px-4 py-3 text-white hover:bg-white/30 rounded-lg transition-all duration-300 backdrop-blur-sm text-center font-medium" onClick={() => setIsMenuOpen(false)}>Design</Link>
+              <Link to="/contact" className="px-4 py-3 text-white hover:bg-white/30 rounded-lg transition-all duration-300 backdrop-blur-sm text-center font-medium" onClick={() => setIsMenuOpen(false)}>Kontak</Link>
             </div>
           </motion.div>
+        )}
         )}
       </nav>
       <Routes>
