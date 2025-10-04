@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
+  const [currency, setCurrency] = useState('IDR');
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,7 +43,8 @@ const Services = () => {
   const packages = [
     {
       name: "Basic",
-      price: "Rp 500.000 - Rp 2.000.000",
+      priceIDR: "Rp 500.000 - Rp 2.000.000",
+      priceUSD: "$ 35 - $ 140",
       duration: "1 - 2 Minggu",
       features: [
         "Design Aplikasi dengan Figma",
@@ -54,7 +58,8 @@ const Services = () => {
     },
     {
       name: "Standard",
-      price: "Rp 2.000.000 - Rp 5.000.000",
+      priceIDR: "Rp 2.000.000 - Rp 5.000.000",
+      priceUSD: "$ 140 - $ 360",
       duration: "2 - 4 Minggu",
       features: [
         "Semua fitur Basic",
@@ -70,7 +75,8 @@ const Services = () => {
     },
     {
       name: "Premium",
-      price: "Rp 5.000.000 - Rp 20.000.000",
+      priceIDR: "Rp 5.000.000 - Rp 20.000.000",
+      priceUSD: "$ 360 - $ 1.430",
       duration: "1 - 3 Bulan",
       features: [
         "Semua fitur Standard",
@@ -87,7 +93,8 @@ const Services = () => {
     },
     {
       name: "Custom",
-      price: "Sesuai Negosiasi",
+      priceIDR: "Sesuai Negosiasi",
+      priceUSD: "Custom Quote",
       duration: "Sesuai Perjanjian",
       features: [
         "Disesuaikan kebutuhan klien",
@@ -121,7 +128,7 @@ const Services = () => {
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Solusi lengkap untuk kebutuhan aplikasi mobile Anda dengan teknologi terdepan dan harga kompetitif
           </p>
-          <div className="text-xl md:text-2xl font-bold text-blue-400">Fast Build, Fast Clear</div>
+          <div className="text-xl md:text-2xl font-bold text-blue-400 mb-6">Fast Build, Fast Clear</div>
         </motion.div>
 
         {/* Main Services */}
@@ -187,6 +194,35 @@ const Services = () => {
           </div>
         </motion.div>
 
+        {/* Currency Toggle */}
+        <motion.div variants={cardVariants} className="text-center mb-8">
+          <div className="flex items-center justify-center space-x-4">
+            <span className="text-gray-300">Currency:</span>
+            <div className="flex bg-white/10 rounded-full p-1">
+              <button
+                onClick={() => setCurrency('IDR')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  currency === 'IDR'
+                    ? 'bg-blue-500 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-white/20'
+                }`}
+              >
+                IDR
+              </button>
+              <button
+                onClick={() => setCurrency('USD')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  currency === 'USD'
+                    ? 'bg-blue-500 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-white/20'
+                }`}
+              >
+                USD
+              </button>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Pricing Packages */}
         <motion.div variants={cardVariants} className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">Paket Layanan</h2>
@@ -211,7 +247,9 @@ const Services = () => {
                 <div className="text-center">
                   <div className="text-4xl mb-4">{pkg.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{pkg.name}</h3>
-                  <div className="text-2xl font-bold mb-2 text-blue-400">{pkg.price}</div>
+                  <div className="text-2xl font-bold mb-2 text-blue-400">
+                    {currency === 'IDR' ? pkg.priceIDR : pkg.priceUSD}
+                  </div>
                   <div className="text-gray-400 mb-6">{pkg.duration}</div>
                   
                   <ul className="space-y-2 text-sm text-left">
@@ -228,8 +266,17 @@ const Services = () => {
           </div>
         </motion.div>
 
+        <motion.div variants={cardVariants} className="text-center mb-12">
+          <Link
+            to="/contact"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Get In Touch
+          </Link>
+        </motion.div>
+
         {/* Target Clients */}
-        <motion.div variants={cardVariants} className="text-center">
+        <motion.div variants={cardVariants} className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-12">Klien Target Kami</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 rounded-xl bg-gradient-to-br from-blue-900/20 to-blue-800/20 border border-blue-500/20">
@@ -239,7 +286,7 @@ const Services = () => {
                 Perusahaan yang memerlukan aplikasi untuk meningkatkan efisiensi dan memberikan pelayanan yang lebih baik
               </p>
             </div>
-            
+
             <div className="p-6 rounded-xl bg-gradient-to-br from-purple-900/20 to-purple-800/20 border border-purple-500/20">
               <div className="text-4xl mb-4">🏛️</div>
               <h4 className="font-semibold mb-2">Instansi Pemerintah</h4>
@@ -247,7 +294,7 @@ const Services = () => {
                 Pemerintah yang membutuhkan aplikasi untuk pendataan warga dan pelayanan publik digital
               </p>
             </div>
-            
+
             <div className="p-6 rounded-xl bg-gradient-to-br from-green-900/20 to-green-800/20 border border-green-500/20">
               <div className="text-4xl mb-4">🛍️</div>
               <h4 className="font-semibold mb-2">UMKM & Startup</h4>
@@ -257,6 +304,9 @@ const Services = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Get In Touch Button */}
+        
       </motion.div>
     </div>
   );

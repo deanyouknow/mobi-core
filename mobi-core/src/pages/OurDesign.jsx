@@ -96,8 +96,8 @@ const OurDesign = () => {
 return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black text-white">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
-      
-      <motion.div 
+
+      <motion.div
         className="container mx-auto px-6 pt-32 pb-20 relative z-10" // Changed from py-20 to pt-32 pb-20
         variants={containerVariants}
         initial="hidden"
@@ -109,7 +109,7 @@ return (
             Portfolio Desain Kami
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Koleksi karya desain aplikasi dan website yang telah kami kembangkan dengan fokus pada 
+            Koleksi karya desain aplikasi dan website yang telah kami kembangkan dengan fokus pada
             user experience dan visual appeal yang memukau
           </p>
           <div className="text-lg text-blue-400 font-semibold">Menciptakan Pengalaman Digital yang Bermakna</div>
@@ -151,8 +151,8 @@ return (
               >
                 {/* Image Container */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={design.image} 
+                  <img
+                    src={design.image}
                     alt={design.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -167,11 +167,11 @@ return (
                   <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                     {design.description}
                   </p>
-                  
+
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {design.tags.map((tag, tagIndex) => (
-                      <span 
+                      <span
                         key={tagIndex}
                         className="px-3 py-1 text-xs bg-blue-900/30 text-blue-300 rounded-full border border-blue-500/30"
                       >
